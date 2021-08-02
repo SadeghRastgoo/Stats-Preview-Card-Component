@@ -1,0 +1,139 @@
+/* My Notes =>  */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem => 10px */
+}
+body {
+  font-size: 16px; /* Default Font Size => 16px */
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: hsl(233, 47%, 7%);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: hsl(244, 38%, 16%);
+  width: 70%;
+  max-width: 1000px;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+
+  & > * {
+    flex-basis: 50%;
+  }
+}
+
+.card-image {
+  mix-blend-mode: soft-light;
+  background: url(../images/image-header-desktop.jpg);
+  filter: contrast(110%);
+  background-size: cover;
+  background-position: center;
+}
+
+// card-text
+.card-text {
+  padding: 6rem 8rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-text__title {
+  line-height: 1.2;
+  color: hsl(0, 0%, 100%);
+
+  span {
+    color: hsl(277, 64%, 61%);
+  }
+}
+
+.card-text__paragraph {
+  font-size: 1.3rem;
+  line-height: 1.75;
+  margin-top: 1rem;
+  color: hsla(0, 0%, 100%, 0.75);
+}
+
+.card-text__stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5rem;
+  width: 100%;
+}
+.stats__box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.stats__top-sec {
+  font-weight: 700;
+  font-size: 2rem;
+}
+.stats__bottom-sec {
+  font-family: "Lexend Deca", sans-serif;
+  color: hsla(0, 0%, 100%, 0.6);
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+// Mobile Friendly (900px)
+@media screen and (max-width: 900px) {
+  .card-text {
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// Mobile Friendly
+@media screen and (max-width: 750px) {
+  body {
+    height: max-content;
+    margin: 6rem auto;
+  }
+
+  .card {
+    flex-direction: column-reverse;
+    width: 87%;
+
+    & > * {
+      flex-basis: auto;
+    }
+  }
+  .card-image {
+    background: url(../images/image-header-desktop.jpg);
+    background-size: cover;
+    height: 300px;
+  }
+
+  .card-text {
+    text-align: center;
+    padding: 2.5rem;
+  }
+
+  .card-text__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: space-between;
+    margin-top: 5rem;
+  }
+}
